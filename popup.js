@@ -531,7 +531,7 @@ function le() {
   const [i, l] = o.useState(null),
     [r, d] = o.useState(""),
     [c, p] = o.useState("loading"),
-    [u, y] = o.useState(!0),
+    [u, y] = o.useState(!1),
     [S, U] = o.useState([]),
     [k, H] = o.useState(0),
     [w, O] = o.useState({
@@ -2698,54 +2698,56 @@ function le() {
                 children: [
                   e.jsxs("div", {
                     style: {
-                      display: "grid",
-                      gridTemplateColumns: "1fr auto 1fr",
+                      display: "flex",
+                      justifyContent: "center",
                       alignItems: "center",
                       fontSize: 10,
                       color: "#9ca3af",
+                      width: "100%",
                     },
                     children: [
-                         e.jsx("button", {
-                            onClick: () => {
-                              chrome.tabs.create({
-                                url: chrome.runtime.getURL("list.html"),
-                              });
-                            },
-                            title: "Liste detaylarını yeni sayfada aç",
-                            onMouseEnter: (event) => {
-                              event.currentTarget.style.background = "#dbeafe";
-                              event.currentTarget.style.color = "#1d4ed8";
-                              event.currentTarget.style.borderColor = "#93c5fd";
-                              event.currentTarget.style.transform =
-                                "translateY(-1px)";
-                              event.currentTarget.style.boxShadow =
-                                "0 3px 8px rgba(37, 99, 235, 0.16)";
-                            },
-                            onMouseLeave: (event) => {
-                              event.currentTarget.style.background = "#eef2ff";
-                              event.currentTarget.style.color = "#2563eb";
-                              event.currentTarget.style.borderColor = "#bfdbfe";
-                              event.currentTarget.style.transform =
-                                "translateY(0)";
-                              event.currentTarget.style.boxShadow =
-                                "0 1px 3px rgba(37, 99, 235, 0.08)";
-                            },
-                            style: {
-                              justifySelf: "start",
-                              background: "#eef2ff",
-                              border: "1px solid #bfdbfe",
-                              borderRadius: 999,
-                              padding: "3px 8px",
-                              fontSize: 9,
-                              fontWeight: 600,
-                              color: "#2563eb",
-                              cursor: "pointer",
-                              fontFamily: "inherit",
-                              transition: "all 0.15s ease",
-                              boxShadow: "0 1px 3px rgba(37, 99, 235, 0.08)",
-                            },
-                            children: "Liste Detayları",
-                          }),
+                      //  e.jsx("button", {
+                      //     onClick: () => {
+                      //       chrome.tabs.create({
+                      //         url: chrome.runtime.getURL("list.html"),
+                      //       });
+                      //     },
+                      //     title: "Liste detaylarını yeni sayfada aç",
+                      //     onMouseEnter: (event) => {
+                      //       event.currentTarget.style.background = "#dbeafe";
+                      //       event.currentTarget.style.color = "#1d4ed8";
+                      //       event.currentTarget.style.borderColor = "#93c5fd";
+                      //       event.currentTarget.style.transform =
+                      //         "translateY(-1px)";
+                      //       event.currentTarget.style.boxShadow =
+                      //         "0 3px 8px rgba(37, 99, 235, 0.16)";
+                      //     },
+                      //     onMouseLeave: (event) => {
+                      //       event.currentTarget.style.background = "#eef2ff";
+                      //       event.currentTarget.style.color = "#2563eb";
+                      //       event.currentTarget.style.borderColor = "#bfdbfe";
+                      //       event.currentTarget.style.transform =
+                      //         "translateY(0)";
+                      //       event.currentTarget.style.boxShadow =
+                      //         "0 1px 3px rgba(37, 99, 235, 0.08)";
+                      //     },
+                      // style: {
+                      //   justifySelf: "start",
+                      //   background: "#eef2ff",
+                      //   border: "1px solid #bfdbfe",
+                      //   borderRadius: 999,
+                      //   padding: "3px 8px",
+                      //   fontSize: 9,
+                      //   fontWeight: 600,
+                      //   color: "#2563eb",
+                      //   cursor: "pointer",
+                      //   fontFamily: "inherit",
+                      //   transition: "all 0.15s ease",
+                      //   boxShadow: "0 1px 3px rgba(37, 99, 235, 0.08)",
+                      // },
+                      // children: "Liste Detayları",
+                      // }),
+
                       e.jsx("div", {
                         style: {
                           textAlign: "center",
@@ -2753,8 +2755,6 @@ function le() {
                         },
                         children: s.footer,
                       }),
-
-                      e.jsx("span", {}),
                     ],
                   }),
                 ],
@@ -2858,7 +2858,7 @@ setTimeout(() => {
             ? settings.enabled
             : typeof settings.isEnabled === "boolean"
               ? settings.isEnabled
-              : true;
+              : false;
 
       if (isEnabled) {
         showMainPopup();
@@ -2914,7 +2914,7 @@ setTimeout(() => {
           setTimeout(() => {
             introActivationInProgress = false;
             showMainPopup();
-          }, 2000);
+          }, 1500);
         },
       );
     });
